@@ -1,0 +1,317 @@
+/* -------------------- */
+/* - 1. GLOBAL STYLES - */
+/* -------------------- */
+
+/* Define your 3 colors. We can change these later! */
+:root {
+    --color-dark: #222831;   /* A dark grey */
+    --color-light: #EEEEEE;  /* A light grey/white */
+    --color-accent: #00ADB5;  /* A teal/blue accent */
+}
+
+/* Smooth scrolling for navbar links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Basic reset and font setup */
+body {
+    /* This uses the 'Roboto' font we imported in the HTML */
+    font-family: 'Roboto', sans-serif;
+
+    /* Remove default browser margin */
+    margin: 0; 
+
+    /* Set base text and background colors */
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* A standard "reset" to make layout easier.
+   It tells the browser to include padding and border
+   in the total width/height of an element.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles for our nav */
+ul {
+    list-style: none;
+}
+
+/* Remove default link underlines and set color */
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+/* ----------------- */
+/* - 2. NAVBAR - */
+/* ----------------- */
+
+nav {
+    /* Layout: Use Flexbox */
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, links right */
+    align-items: center; /* Vertically centers content */
+
+    /* Colors & Size */
+    background-color: var(--color-dark);
+    color: var(--color-light); /* Sets text color for children */
+
+    /* Spacing */
+    padding: 20px 40px; /* 20px top/bottom, 40px left/right */
+}
+
+/* Style the logo (Your Name) */
+.logo {
+    font-size: 1.5rem; /* Makes it 1.5x the base font size */
+    font-weight: 700; /* Makes it bold (700 is the bold version of Roboto) */
+}
+
+/* Style the <ul> that holds the links */
+.nav-links {
+    display: flex; /* Puts links in a horizontal row */
+    gap: 30px; /* Puts 30px of space *between* the links */
+}
+
+/* Style the individual <a> link tags */
+.nav-links a {
+    color: var(--color-light); /* Makes links light */
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Adds a small fade effect */
+}
+
+/* Change link color on hover */
+.nav-links a:hover {
+    color: var(--color-accent); /* Changes to your accent color */
+}
+
+/* ----------------- */
+/* - 3. HERO SECTION - */
+/* ----------------- */
+
+.hero {
+    /* Layout: Use Flexbox to center content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+
+    /* Size: Make it full-screen height */
+    height: 100vh; /* 100% of the viewport (screen) height */
+
+    /* Colors & Background */
+    /* You can replace this color with a background-image if you want */
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    /* Spacing */
+    padding: 0 20px; /* Add some padding for small screens */
+}
+
+.hero-content {
+    /* Center all the text inside this box */
+    text-align: center;
+}
+
+/* Style the big heading (Your Name) */
+.hero-content h1 {
+    font-size: 3.5rem; /* Very large font */
+    margin-bottom: 10px;
+}
+
+/* Style the sub-heading (Frontend Developer) */
+.hero-content h2 {
+    font-size: 2rem;
+    color: var(--color-accent); /* Use the accent color */
+    margin-bottom: 20px;
+}
+
+/* Style the paragraph */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Style the "View My Work" button */
+.hero-button {
+    /* Sizing and Spacing */
+    font-size: 1.1rem;
+    padding: 12px 24px; /* 12px top/bottom, 24px left/right */
+
+    /* Colors */
+    background-color: var(--color-accent);
+    color: var(--color-dark); /* Dark text on the light button */
+
+    /* Style */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-weight: 700; /* Bold text */
+
+    /* Effect */
+    transition: all 0.3s ease;
+}
+
+/* Add a hover effect to the button */
+.hero-button:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* -------------------- */
+/* - 4. PROJECTS SECTION - */
+/* -------------------- */
+
+.projects {
+    /* Spacing */
+    /* Adds 80px of padding on top/bottom, 40px on left/right */
+    padding: 80px 40px;
+
+    /* Set background to light (this is the default, but good to be explicit) */
+    background-color: var(--color-light);
+
+    /* All text in this section will be dark */
+    color: var(--color-dark);
+
+    /* Center the "My Projects" title */
+    text-align: center;
+}
+
+.projects h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px; /* Space between title and grid */
+}
+
+/* This is the magic for your 2x2 grid */
+.project-grid {
+    display: grid;
+
+    /* Create 2 equal-width columns */
+    grid-template-columns: repeat(2, 1fr); 
+
+    /* Add space between the grid items */
+    gap: 30px;
+
+    /* Set a max-width for the grid on large screens */
+    max-width: 1100px;
+    margin: 0 auto; /* Center the grid container */
+}
+
+/* Style for each individual project "card" */
+.project-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Keeps image corners rounded */
+}
+
+/* This is your grey placeholder box */
+.project-placeholder {
+    width: 100%; /* Make it fill the card */
+    height: 200px; /* The height you specified */
+    background-color: #c4c4c4; /* A simple grey color */
+}
+
+.project-card h4 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px 0; /* Add spacing */
+}
+
+.project-card p {
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+/* -------------------- */
+/* - 5. CONTACT SECTION - */
+/* -------------------- */
+
+.contact {
+    /* Layout */
+    text-align: center; /* Center all text */
+
+    /* Spacing */
+    padding: 80px 40px;
+
+    /* Colors */
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.contact h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contact .email {
+    font-size: 1.3rem;
+    font-weight: 700; /* Make the email bold */
+    color: var(--color-accent); /* Use accent color for email */
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    color: var(--color-light); /* Light color for links */
+    font-size: 1.2rem;
+    margin: 0 15px; /* Add space *between* the links */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-accent); /* Hover effect */
+}
+
+/* -------------------- */
+/* - 6. RESPONSIVENESS - */
+/* -------------------- */
+
+/* This media query targets all screens
+   800px wide or smaller */
+@media (max-width: 800px) {
+
+    /* --- NAVBAR --- */
+    nav {
+        /* Stack the logo and links vertically */
+        flex-direction: column;
+
+        /* Add some space between them */
+        gap: 15px;
+    }
+
+    /* --- HERO --- */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Make heading smaller */
+    }
+    .hero-content h2 {
+        font-size: 1.5rem; /* Make sub-heading smaller */
+    }
+
+    /* --- PROJECTS --- */
+    .project-grid {
+        /* Change the 2-column grid to a 1-column grid */
+        grid-template-columns: 1fr;
+
+        /* Reduce the gap for a single column */
+        gap: 20px;
+    }
+
+    .projects {
+        /* Reduce padding on small screens */
+        padding: 60px 20px;
+    }
+
+    /* --- CONTACT --- */
+    .contact {
+        /* Reduce padding on small screens */
+        padding: 60px 20px;
+    }
+
+}
