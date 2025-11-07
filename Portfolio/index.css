@@ -315,3 +315,35 @@ nav {
     }
 
 }
+
+/* -------------------- */
+/* - 7. PROJECT LINKS - */
+/* -------------------- */
+
+/* Remove default link styles from the project card */
+.project-card-link {
+    text-decoration: none;
+    color: var(--color-dark);
+    display: block; /* Allows the <a> to be a block */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a nice hover effect to the whole card */
+.project-card-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the new project image */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* This scales the image nicely */
+}
+
+/* We need to override the placeholder to use the image */
+.project-card {
+    /* Remove text-align: center if it's there from
+       a previous task (like in .projects) */
+    text-align: center;
+}
